@@ -18,11 +18,9 @@ public class SimpleTeleport : MonoBehaviour {
         {
             if(GvrControllerInput.ClickButtonDown)
             {
-
                 var shiftedPos = controller.GetComponent<Pointer>().hitPoint;
-                shiftedPos.y += 5;
+                shiftedPos.y += 4;
                 transform.position = shiftedPos;
-
             }
         }
 

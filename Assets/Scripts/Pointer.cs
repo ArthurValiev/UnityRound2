@@ -7,7 +7,7 @@ public class Pointer : MonoBehaviour {
     public GameObject target;
     public GameObject pointerDot;
     public Vector3 hitPoint;
-    float distance;
+    public float distance;
     LineRenderer lineRenderer;
 
 	// Use this for initialization

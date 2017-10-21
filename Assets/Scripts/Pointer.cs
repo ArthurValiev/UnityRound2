@@ -32,16 +32,19 @@ public class Pointer : MonoBehaviour {
             lineRenderer.enabled = true;
             lineRenderer.SetPosition(0, transform.position);
             lineRenderer.SetPosition(1, objectHit.point);
+
+
              
         }
         else
         {
             target = null;
             pointerDot.gameObject.SetActive(false);
+            //lineRenderer.enabled = false;
             lineRenderer.SetPosition(0, transform.position);
-            lineRenderer.SetPosition(1, fwd * 50);
+            lineRenderer.SetPosition(1, transform.position + transform.forward * 50);
+            //Debug.DrawRay(transform.position, fwd * 50, Color.blue);
 
-            Debug.DrawRay(transform.position, fwd * 50, Color.blue);
         }
 
 

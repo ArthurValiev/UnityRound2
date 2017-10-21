@@ -16,6 +16,8 @@ public class GlueToHeadset : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position = headSet.transform.position + Camera.main.transform.forward * distance;
+        var yShift = headSet.transform.position;
+        yShift.y -= 2;
+        transform.position = yShift + Camera.main.transform.forward * distance;
     }
 }

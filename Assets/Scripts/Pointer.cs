@@ -15,7 +15,6 @@ public class Pointer : MonoBehaviour {
 
         pointerDot = GameObject.Find("PointerDot");
         lineRenderer = GetComponent<LineRenderer>();
-
 	}
 
 	// Update is called once per frame
@@ -32,9 +31,9 @@ public class Pointer : MonoBehaviour {
             pointerDot.transform.position = hitPoint;
 
             distance = Vector3.Distance(transform.position, hitPoint);
-            lineRenderer.SetPosition(0, transform.position);
-            lineRenderer.SetPosition(1, objectHit.distance * fwd);
             lineRenderer.enabled = true;
+            lineRenderer.SetPosition(0, transform.position);
+            lineRenderer.SetPosition(1, fwd * objectHit.distance);
              
         }
         else

@@ -18,6 +18,10 @@ public class GlueToHeadset : MonoBehaviour
     {
         var yShift = headSet.transform.position;
         yShift.y -= 2;
-        transform.position = yShift + Camera.main.transform.forward * distance;
+        var yShift2 = headSet.transform.position;
+        yShift.y += 2;
+        transform.position = yShift + headSet.transform.forward * distance;
+        Camera.main.transform.position = yShift2 + headSet.transform.forward * distance;
+        Camera.main.transform.rotation = transform.rotation;
     }
 }

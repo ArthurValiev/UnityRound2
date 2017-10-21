@@ -7,7 +7,6 @@ public class Pointer : MonoBehaviour {
     public GameObject target;
     public GameObject pointerDot;
     public Vector3 hitPoint;
-    float distance;
     LineRenderer lineRenderer;
 
 	// Use this for initialization
@@ -30,7 +29,6 @@ public class Pointer : MonoBehaviour {
             pointerDot.gameObject.SetActive(true);
             pointerDot.transform.position = hitPoint;
 
-            distance = Vector3.Distance(transform.position, hitPoint);
             lineRenderer.enabled = true;
             lineRenderer.SetPosition(0, transform.position);
             lineRenderer.SetPosition(1, objectHit.point);
@@ -43,6 +41,8 @@ public class Pointer : MonoBehaviour {
             lineRenderer.SetPosition(0, transform.position);
             lineRenderer.SetPosition(1, fwd * 50);
         }
+
+
 
 	}
 }

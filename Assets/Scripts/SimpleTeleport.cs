@@ -20,7 +20,7 @@ public class SimpleTeleport : MonoBehaviour {
             {
 
                 var shiftedPos = controller.GetComponent<Pointer>().hitPoint;
-                shiftedPos.y += 3;
+                shiftedPos.y += 5;
                 transform.position = shiftedPos;
 
             }

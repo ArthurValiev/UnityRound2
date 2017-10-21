@@ -14,7 +14,7 @@ public class GlueToHeadset : MonoBehaviour
 
     public float distance;
 
-    void Update()
+    void FixedUpdate()
     {
         transform.position = headSet.transform.position + Camera.main.transform.forward * distance;
     }

@@ -7,18 +7,20 @@ public class Pointer : MonoBehaviour {
     public GameObject target;
     public GameObject pointerDot;
     public Vector3 hitPoint;
+    float distance;
+    LineRenderer lineRenderer;
 
 	// Use this for initialization
 	void Start () {
 
         pointerDot = GameObject.Find("PointerDot");
+        lineRenderer = GetComponent<LineRenderer>();
 
 	}
 
 	// Update is called once per frame
 	void FixedUpdate () {
         transform.localRotation = GvrControllerInput.Orientation;
-
         RaycastHit objectHit;
         Vector3 fwd = transform.forward;
         Debug.DrawRay(transform.position, fwd * 50, Color.green);
@@ -28,11 +30,18 @@ public class Pointer : MonoBehaviour {
             hitPoint = objectHit.point;
             pointerDot.gameObject.SetActive(true);
             pointerDot.transform.position = hitPoint;
+
+            distance = Vector3.Distance(transform.position, hitPoint);
+            lineRenderer.SetPosition(0, transform.position);
+            lineRenderer.SetPosition(1, objectHit.distance * fwd);
+            lineRenderer.enabled = true;
+             
         }
         else
         {
             target = null;
             pointerDot.gameObject.SetActive(false);
+            lineRenderer.enabled = false;
         }
 
 	}

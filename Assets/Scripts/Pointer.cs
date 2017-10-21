@@ -21,7 +21,7 @@ public class Pointer : MonoBehaviour {
         transform.localRotation = GvrControllerInput.Orientation;
         RaycastHit objectHit;
         Vector3 fwd = transform.forward;
-        //Debug.DrawRay(transform.position, fwd * 50, Color.green);
+
         if (Physics.Raycast(transform.position, fwd, out objectHit, 50))
         {
             target = objectHit.transform.gameObject;
@@ -40,6 +40,8 @@ public class Pointer : MonoBehaviour {
             pointerDot.gameObject.SetActive(false);
             lineRenderer.SetPosition(0, transform.position);
             lineRenderer.SetPosition(1, fwd * 50);
+
+            Debug.DrawRay(transform.position, fwd * 50, Color.blue);
         }
 
 

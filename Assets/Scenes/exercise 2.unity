@@ -383,6 +383,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 120639400141390014, guid: ce8a5655e18fb4fd0ae62d9661941b36,
+        type: 2}
+      propertyPath: m_Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120639400141390014, guid: ce8a5655e18fb4fd0ae62d9661941b36,
+        type: 2}
+      propertyPath: m_UseWorldSpace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 120639400141390014, guid: ce8a5655e18fb4fd0ae62d9661941b36,
+        type: 2}
+      propertyPath: m_Parameters.alignment
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ce8a5655e18fb4fd0ae62d9661941b36, type: 2}
   m_IsPrefabParent: 0

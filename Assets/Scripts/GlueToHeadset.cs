@@ -30,6 +30,5 @@ public class GlueToHeadset : MonoBehaviour
         Camera.main.transform.rotation = transform.rotation;
         Camera.main.transform.forward = transform.forward;
 
-        Debug.Log(transform.forward);
     }
 }

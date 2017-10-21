@@ -12,7 +12,7 @@ public class SimpleTeleport : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
         if(controller.GetComponent<Pointer>().target)
         {

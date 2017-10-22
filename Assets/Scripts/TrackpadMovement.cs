@@ -14,13 +14,12 @@ public class TrackpadMovement : MonoBehaviour
 
     void Start()
     {
-
+        Camera.main.stereoTargetEye = StereoTargetEyeMask.Both;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-
         if (GvrControllerInput.IsTouching)
         {
             touchVector = GvrControllerInput.TouchPosCentered;
@@ -29,16 +28,12 @@ public class TrackpadMovement : MonoBehaviour
             dirVector.y = 0;
             dirVector.z = touchVector.y;
 
-            if ((Mathf.Abs(touchVector.x) < 0.3f) && (Mathf.Abs(touchVector.y) < 0.3f))
-            { //проверка на dead zone
-                //Debug.Log("dead");
-                return;
-            }
-            else
+            Vector3 fixedDir = Camera.main.transform.TransformDirection(dirVector);
+            fixedDir.y = 0;
+
+            if (!((Mathf.Abs(touchVector.x) < 0.3f) && (Mathf.Abs(touchVector.y) < 0.3f)))
             {
-                {
-                    transform.Translate(dirVector * Time.fixedDeltaTime * speed);
-                }
+                transform.Translate( fixedDir * Time.fixedDeltaTime * speed);
             }
         }
     }

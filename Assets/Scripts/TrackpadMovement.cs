@@ -21,17 +21,18 @@ public class TrackpadMovement : MonoBehaviour {
 				//Debug.Log("dead");
 				return;
 			}
-			newPos = Vector3.ProjectOnPlane(Camera.main.transform.up, Vector3.up).normalized;
-			//if (touchVector.y > 0) {				
-			//	newPos.z += 0.2f;
-			//}
-			if (touchVector.x > 0) {
-				newPos.x += 0.2f;
+			newPos = Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up).normalized;
+			if (touchVector.y > 0) {				
+				transform.Translate(newPos);
+
+			}
+			if (touchVector.x > 0) {				
+				transform.Translate(Vector3.right * 0.1f, Camera.main.transform);
 			}
 			else {
-				newPos.x -= 0.2f;
+				transform.Translate(Vector3.left * 0.1f, Camera.main.transform);
 			}
-			transform.position = transform.TransformPoint(newPos);
+			
 		}
 	}
 }

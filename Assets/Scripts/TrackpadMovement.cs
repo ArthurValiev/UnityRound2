@@ -6,11 +6,8 @@ public class TrackpadMovement : MonoBehaviour
 {
 
     Vector2 touchVector;
-
     Vector3 dirVector;
-
     public float speed;
-    private Vector3 velocity = Vector3.zero;
 
     void Start()
     {

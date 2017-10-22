@@ -51,3 +51,13 @@ ehthumbs.db
 Thumbs.db
 
 # End of https://www.gitignore.io/api/unity
+Assets/Scripts/TrackpadMovement.cs
+Assets/Scripts/TrackpadMovement.cs
+Assets/Scripts/TrackpadMovement2.cs
+Assets/Scripts/TrackpadMovement.cs
+ProjectSettings/ProjectSettings.asset
+ProjectSettings/GraphicsSettings.asset
+Assets/Scripts/TrackpadMovement.cs
+*.asset
+ProjectSettings/GraphicsSettings.asset
+ProjectSettings/QualitySettings.asset

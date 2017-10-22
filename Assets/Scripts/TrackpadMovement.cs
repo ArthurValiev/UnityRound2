@@ -5,6 +5,8 @@ using UnityEngine;
 public class TrackpadMovement : MonoBehaviour {
 
 	Vector2 touchVector;
+	Vector3 newPos;
+	
 	// Use this for initialization
 	void Start () {
 		
@@ -12,19 +14,28 @@ public class TrackpadMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		/*if (GvrControllerInput.IsTouching) { //второй if - проверка на dead zone
-			Debug.Log("touch");
+
+		if (GvrControllerInput.IsTouching) { 
+			//Debug.Log("touch");
 			touchVector = GvrControllerInput.TouchPosCentered;
-			if ((touchVector.x < 0.3f && touchVector.x > -0.3f) && (touchVector.y < 0.3f && touchVector.y > -0.3f)) {
-				Debug.Log("dead");
+			if ((Mathf.Abs(touchVector.x) < 0.3f) && (Mathf.Abs(touchVector.y) < 0.3f)) { //проверка на dead zone
+				//Debug.Log("dead");
 				return;
 			}
-			else {
-				Debug.Log(touchVector);
+			newPos = Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up).normalized;
+			if (touchVector.y > 0) {				
+				transform.Translate(newPos);
+
 			}
-		}*/
-		touchVector.x = 3f;
-		touchVector.y = 7f;
-		Debug.Log(touchVector);
+			if (touchVector.x > 0) {				
+				transform.Translate(Vector3.right * 0.1f, Camera.main.transform);
+			}
+			else {
+				transform.Translate(Vector3.left * 0.1f, Camera.main.transform);
+			}
+			
+		}
+	
+		
 	}
 }

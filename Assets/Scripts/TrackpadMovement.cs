@@ -6,6 +6,7 @@ public class TrackpadMovement : MonoBehaviour {
 
 	Vector2 touchVector;
 	Vector3 newPos;
+	
 	// Use this for initialization
 	void Start () {
 		
@@ -34,5 +35,7 @@ public class TrackpadMovement : MonoBehaviour {
 			}
 			
 		}
+	
+		
 	}
 }
